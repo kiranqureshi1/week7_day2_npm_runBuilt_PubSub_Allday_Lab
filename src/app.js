@@ -16,6 +16,4 @@ const infoDiv = document.querySelector('.planet-details');
   const planetInfoView = new PlanetInfoView(infoDiv);
   planetInfoView.bindEvents();
 
-  // planetsDataModel.bindEvents();
-
 });
