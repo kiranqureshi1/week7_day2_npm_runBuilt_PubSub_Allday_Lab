@@ -11,29 +11,18 @@ SolarSystem.prototype.bindEvents = function(){
     const result = this.planetInfo(selectedPlanet)
     console.log(result);
     PubSub.publish('display result', result);
+    console.log("what am I getting?")
   });
 };
 
 SolarSystem.prototype.planetInfo = function(planetName){
   for ( let planet of this.planets){
     if (planet.name === planetName){
+      return planet;
+    };
+
   };
-
-  return planet;
 };
-};
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

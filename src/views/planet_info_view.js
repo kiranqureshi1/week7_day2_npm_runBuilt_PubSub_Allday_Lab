@@ -7,12 +7,21 @@ const PlanetInfoView = function(container){
 PlanetInfoView.prototype.bindEvents = function(){
   PubSub.subscribe('display result', (event) => {
     const selectedPlanet = event.detail;
+    console.log(selectedPlanet);
     this.display(selectedPlanet);
   });
 };
 
 
+
 PlanetInfoView.prototype.display = function(planet){
+  // const infoParagraph = document.createElement('li');
+  // infoParagraph.textContent = `name: ${planet.name}, orbit: ${planet.orbit}`
+  // this.container.innerHTML = '';
+  // this.container.appendChild(infoParagraph);
+  // console.log(this.container);
+
+
   const infoHeading = document.createElement('h1');
   infoHeading.textContent = `${planet.name}`;
  const infoLiA = document.createElement('p');
@@ -27,8 +36,8 @@ PlanetInfoView.prototype.display = function(planet){
  infoLiE.textContent = `Gravity: ${planet.gravity}`;
  const infoLiF = document.createElement('p');
  infoLiF.textContent = `Moons: ${planet.moons}`;
- const infoLiG = document.createElement('p');
- infoHeading.textContent = `${planet.image}`;
+ // const infoLiG = document.createElement('p');
+ // infoHeading.textContent = `${planet.image}`;
  this.container.innerHTML = '';
  this.container.appendChild(infoHeading);
  this.container.appendChild(infoLiA);
@@ -37,9 +46,17 @@ PlanetInfoView.prototype.display = function(planet){
  this.container.appendChild(infoLiD);
  this.container.appendChild(infoLiE);
  this.container.appendChild(infoLiF);
- this.container.appendChild(infoLiG);
+ // this.container.appendChild(infoLiG);
 
 };
 
 
 module.exports = PlanetInfoView;
+// name: 'Mercury',
+// orbit: 87.969,
+// day: 58.646,
+// surfaceArea: 0.147,
+// volume: 0.056,
+// gravity: 0.38,
+// moons: 0,
+// image: 'images/mercury.jpg'

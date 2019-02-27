@@ -6,7 +6,7 @@ const SelectView = function(element){
 
 
 SelectView.prototype.bindEvents = function() {
-  const navElements = document.querySelector('nav');
+  const navElements = document.querySelector('#planet-menu');
   console.log(navElements);
   navElements.addEventListener('click', (event) => {
     event.preventDefault();
@@ -14,6 +14,8 @@ SelectView.prototype.bindEvents = function() {
     console.log(planet);
     PubSub.publish('Select planet', planet);
   });
+
+  
 
 }
 module.exports = SelectView;
